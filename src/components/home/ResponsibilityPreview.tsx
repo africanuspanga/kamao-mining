@@ -15,7 +15,7 @@ export function ResponsibilityPreview() {
     <section className="bg-kamao-mist py-20 md:py-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:aspect-square">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-square">
             <Image
               src="/underground-mine-team.jpg"
               alt={dict.home.responsibility.imageAlt}

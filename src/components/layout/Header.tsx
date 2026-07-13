@@ -95,7 +95,6 @@ function LanguageSwitcher({ lang }: { lang: Language }) {
     if (target === "en") {
       return pathname.replace(/^\/fr/, "") || "/";
     }
-    // French route mapping
     const map: Record<string, string> = {
       "/": "/fr/",
       "/about/": "/fr/a-propos/",
@@ -109,8 +108,6 @@ function LanguageSwitcher({ lang }: { lang: Language }) {
       "/privacy/": "/fr/confidentialite/",
       "/terms/": "/fr/conditions/",
     };
-
-    // Handle dynamic routes by pattern
     if (pathname.startsWith("/minerals/")) {
       return pathname.replace("/minerals/", "/fr/mineraux/");
     }
@@ -120,34 +117,36 @@ function LanguageSwitcher({ lang }: { lang: Language }) {
     if (pathname.startsWith("/projects/")) {
       return pathname.replace("/projects/", "/fr/projets/");
     }
-
     return map[pathname] || "/fr/";
   };
 
+  const base =
+    "relative z-10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2 rounded-full";
+
   return (
-    <div className="flex items-center gap-1 text-sm font-semibold">
+    <div
+      className="relative inline-flex items-center rounded-full border border-white/20 bg-white/10 p-1 backdrop-blur-sm"
+      role="group"
+      aria-label="Language selector"
+    >
+      <span
+        className={cn(
+          "absolute left-1 top-1 h-[calc(100%-8px)] w-[calc(50%-4px)] rounded-full bg-kamao-copper transition-all duration-200",
+          lang === "fr" ? "translate-x-full" : "translate-x-0",
+        )}
+        aria-hidden="true"
+      />
       <Link
         href={switchPath("en")}
-        className={cn(
-          "rounded-sm px-2 py-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2",
-          lang === "en"
-            ? "bg-kamao-copper text-white"
-            : "text-white/70 hover:bg-white/10",
-        )}
+        className={cn(base, lang === "en" ? "text-white" : "text-white/70 hover:text-white")}
         aria-label="Switch to English"
         aria-current={lang === "en" ? "true" : undefined}
       >
         EN
       </Link>
-      <span className="text-white/40">|</span>
       <Link
         href={switchPath("fr")}
-        className={cn(
-          "rounded-sm px-2 py-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2",
-          lang === "fr"
-            ? "bg-kamao-copper text-white"
-            : "text-white/70 hover:bg-white/10",
-        )}
+        className={cn(base, lang === "fr" ? "text-white" : "text-white/70 hover:text-white")}
         aria-label="Passer au français"
         aria-current={lang === "fr" ? "true" : undefined}
       >

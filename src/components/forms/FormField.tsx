@@ -39,7 +39,7 @@ export function Input({
   return (
     <input
       className={cn(
-        "w-full rounded-sm border border-kamao-graphite/20 bg-white px-4 py-3 text-kamao-earth placeholder:text-kamao-graphite/40 focus:border-kamao-copper focus:outline-none focus:ring-1 focus:ring-kamao-copper",
+        "w-full rounded-xl border border-kamao-graphite/20 bg-white px-4 py-3 text-kamao-earth placeholder:text-kamao-graphite/40 focus:border-kamao-copper focus:outline-none focus:ring-1 focus:ring-kamao-copper",
         error && "border-red-500 focus:border-red-500 focus:ring-red-500",
         className,
       )}
@@ -56,7 +56,7 @@ export function Textarea({
   return (
     <textarea
       className={cn(
-        "w-full rounded-sm border border-kamao-graphite/20 bg-white px-4 py-3 text-kamao-earth placeholder:text-kamao-graphite/40 focus:border-kamao-copper focus:outline-none focus:ring-1 focus:ring-kamao-copper",
+        "w-full rounded-xl border border-kamao-graphite/20 bg-white px-4 py-3 text-kamao-earth placeholder:text-kamao-graphite/40 focus:border-kamao-copper focus:outline-none focus:ring-1 focus:ring-kamao-copper",
         error && "border-red-500 focus:border-red-500 focus:ring-red-500",
         className,
       )}

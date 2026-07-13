@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { organizationStructuredData, websiteStructuredData } from "@/lib/structured-data";
 import { defaultMetadata } from "@/lib/metadata";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useDictionary, useLanguage } from "@/lib/i18n";
 import { company } from "@/content/company";
-import { cn } from "@/lib/utils";
 
 function getReducedMotion() {
   if (typeof window === "undefined") return false;
@@ -57,7 +55,7 @@ export function Hero() {
   const showVideo = !prefersReducedMotion && !isMobile;
 
   return (
-    <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-kamao-earth">
+    <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-kamao-earth">
       {/* Static fallback image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -82,20 +80,20 @@ export function Hero() {
       )}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-kamao-earth/95 via-kamao-earth/80 to-kamao-earth/60" />
+      <div className="absolute inset-0 bg-kamao-earth/70" />
 
-      <Container className="relative z-10 pt-20">
-        <div className="max-w-3xl">
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-kamao-copper">
+      <Container className="relative z-10 pt-24 text-center">
+        <div className="mx-auto max-w-4xl">
+          <span className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-widest text-kamao-copper backdrop-blur-sm">
             {dict.home.hero.eyebrow}
           </span>
           <h1 className="font-heading text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-hero-lg">
             {dict.company.tagline}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-kamao-mist/85 md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-kamao-mist/90 md:text-xl">
             {dict.home.hero.description}
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Button
               variant="primary"
               size="lg"
@@ -113,13 +111,11 @@ export function Hero() {
               {dict.actions.startConversation}
             </Button>
           </div>
-          <p className="mt-10 text-sm font-medium uppercase tracking-widest text-kamao-sand/70">
+          <p className="mt-12 text-sm font-medium uppercase tracking-widest text-kamao-sand/70">
             {dict.home.hero.supportingLine}
           </p>
         </div>
       </Container>
-
-      {/* Scroll indicator removed to reduce motion clutter */}
     </section>
   );
 }

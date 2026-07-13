@@ -85,8 +85,8 @@ export function ResponsibilityContent() {
                       key={itemIndex}
                       className={
                         section.dark
-                          ? "flex items-start gap-3 rounded-sm bg-kamao-graphite/40 p-4 text-kamao-mist/90"
-                          : "flex items-start gap-3 rounded-sm bg-white p-4 text-kamao-graphite/90 shadow-sm"
+                          ? "flex items-start gap-3 rounded-2xl bg-kamao-graphite/40 p-4 text-kamao-mist/90"
+                          : "flex items-start gap-3 rounded-2xl bg-white p-4 text-kamao-graphite/90 shadow-sm"
                       }
                     >
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-kamao-copper" />

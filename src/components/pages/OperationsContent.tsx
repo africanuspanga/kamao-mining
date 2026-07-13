@@ -26,7 +26,7 @@ export function OperationsContent() {
             {dict.operations.capabilities.areas.map((area, index) => (
               <div
                 key={index}
-                className="rounded-sm border-t-4 border-kamao-copper bg-white p-6 shadow-sm"
+                className="rounded-2xl border-t-4 border-kamao-copper bg-white p-6 shadow-sm"
               >
                 <h3 className="font-heading text-xl font-bold text-kamao-earth">
                   {area.title}
@@ -51,7 +51,7 @@ export function OperationsContent() {
       <section className="bg-kamao-earth py-20 md:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/aerial-crushing-operation.jpg"
                 alt={dict.operations.closing.imageAlt}

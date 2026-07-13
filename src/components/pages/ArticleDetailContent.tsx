@@ -81,7 +81,7 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
       <article className="bg-kamao-mist py-16 md:py-24">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-sm">
+            <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
                 src={article.heroImage}
                 alt={article.imageAlt[lang]}
@@ -146,7 +146,7 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
                   <Link
                     key={related.slug}
                     href={href}
-                    className="group flex items-center justify-between rounded-sm bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                    className="group flex items-center justify-between rounded-2xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-widest text-kamao-copper">

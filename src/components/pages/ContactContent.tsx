@@ -37,7 +37,7 @@ export function ContactContent() {
                 heading={dict.contact.form.heading}
                 align="left"
               />
-              <div className="mt-8 rounded-sm bg-white p-6 shadow-sm md:p-10">
+              <div className="mt-8 rounded-2xl bg-white p-6 shadow-sm md:p-10">
                 <ContactForm />
               </div>
             </div>

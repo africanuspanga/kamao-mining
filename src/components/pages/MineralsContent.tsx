@@ -41,7 +41,7 @@ export function MineralsContent() {
                 <Link
                   key={mineral.slug}
                   href={href}
-                  className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm transition-shadow hover:shadow-md"
+                  className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image

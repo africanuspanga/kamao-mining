@@ -16,7 +16,7 @@ export function AboutContent() {
       <section className="bg-kamao-mist py-20 md:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
-            <div className="rounded-sm bg-white p-8 shadow-sm md:p-10">
+            <div className="rounded-2xl bg-white p-8 shadow-md md:p-10">
               <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-kamao-copper">
                 {dict.about.mission.eyebrow}
               </span>
@@ -27,7 +27,7 @@ export function AboutContent() {
                 {dict.about.mission.text}
               </p>
             </div>
-            <div className="rounded-sm bg-kamao-earth p-8 md:p-10">
+            <div className="rounded-2xl bg-kamao-earth p-8 md:p-10">
               <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-kamao-copper">
                 {dict.about.vision.eyebrow}
               </span>
@@ -54,7 +54,7 @@ export function AboutContent() {
             {dict.about.values.items.map((value, index) => (
               <div
                 key={index}
-                className="rounded-sm border-t-4 border-kamao-copper bg-white p-6 shadow-sm"
+                className="rounded-2xl border-t-4 border-kamao-copper bg-white p-6 shadow-md"
               >
                 <h3 className="font-heading text-xl font-bold text-kamao-earth">
                   {value.title}

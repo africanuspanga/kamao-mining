@@ -23,7 +23,7 @@ export function ProjectsPreview() {
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div key={project.slug} className="rounded-sm bg-white p-6 shadow-sm">
+            <div key={project.slug} className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="font-heading text-xl font-bold text-kamao-earth">
                 {project.name.en}
               </h3>

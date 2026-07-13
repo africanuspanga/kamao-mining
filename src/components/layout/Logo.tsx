@@ -13,7 +13,7 @@ export function Logo({
 }) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <div className="relative h-10 w-10 overflow-hidden rounded-sm">
+      <div className="relative h-10 w-10 overflow-hidden rounded-2xl">
         <Image
           src={company.favicon}
           alt=""

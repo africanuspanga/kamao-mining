@@ -46,7 +46,7 @@ export function InsightsPreview() {
               <Link
                 key={article.slug}
                 href={href}
-                className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image

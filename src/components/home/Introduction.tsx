@@ -36,7 +36,7 @@ export function Introduction() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:aspect-square">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-square">
             <Image
               src="/open-pit-terraces.jpg"
               alt={dict.home.intro.imageAlt}

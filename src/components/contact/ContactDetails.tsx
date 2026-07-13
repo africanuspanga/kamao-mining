@@ -11,7 +11,7 @@ export function ContactDetails() {
   return (
     <div className="space-y-8">
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-kamao-copper/10 text-kamao-copper">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-kamao-copper/10 text-kamao-copper">
           <Mail className="h-5 w-5" />
         </div>
         <div>
@@ -28,7 +28,7 @@ export function ContactDetails() {
       </div>
 
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-kamao-copper/10 text-kamao-copper">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-kamao-copper/10 text-kamao-copper">
           <Phone className="h-5 w-5" />
         </div>
         <div>
@@ -45,7 +45,7 @@ export function ContactDetails() {
       </div>
 
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-kamao-copper/10 text-kamao-copper">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-kamao-copper/10 text-kamao-copper">
           <Phone className="h-5 w-5" />
         </div>
         <div>
@@ -61,7 +61,7 @@ export function ContactDetails() {
         </div>
       </div>
 
-      <p className="rounded-sm bg-kamao-sand p-4 text-sm text-kamao-graphite/70">
+      <p className="rounded-2xl bg-kamao-sand p-4 text-sm text-kamao-graphite/70">
         {dict.contact.details.noAddress}
       </p>
     </div>

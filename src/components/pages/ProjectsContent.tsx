@@ -43,7 +43,7 @@ export function ProjectsContent() {
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <div key={project.slug} className="rounded-sm bg-white p-6 shadow-sm">
+              <div key={project.slug} className="rounded-2xl bg-white p-6 shadow-sm">
                 <h2 className="font-heading text-xl font-bold text-kamao-earth">
                   {project.name[lang]}
                 </h2>

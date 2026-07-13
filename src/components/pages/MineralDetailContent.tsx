@@ -34,7 +34,7 @@ export function MineralDetailContent({ mineral }: { mineral: Mineral }) {
       <section className="bg-kamao-mist py-16 md:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:aspect-square">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-square">
               <Image
                 src={mineral.image}
                 alt={mineral.imageAlt[lang]}
@@ -100,7 +100,7 @@ export function MineralDetailContent({ mineral }: { mineral: Mineral }) {
                   <Link
                     key={related.slug}
                     href={href}
-                    className="group flex items-center justify-between rounded-sm bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                    className="group flex items-center justify-between rounded-2xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <span className="font-heading text-lg font-bold text-kamao-earth group-hover:text-kamao-copper">
                       {related.name[lang]}

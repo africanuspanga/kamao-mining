@@ -105,7 +105,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       {mailtoFallback && (
-        <p className="rounded-sm bg-kamao-sand p-4 text-sm text-kamao-graphite/80">
+        <p className="rounded-2xl bg-kamao-sand p-4 text-sm text-kamao-graphite/80">
           {dict.form.mailtoFallback}
         </p>
       )}
@@ -271,12 +271,12 @@ export function ContactForm() {
       </Button>
 
       {status === "success" && (
-        <p className="rounded-sm bg-green-50 p-4 text-green-800" role="status">
+        <p className="rounded-2xl bg-green-50 p-4 text-green-800" role="status">
           {statusMessage}
         </p>
       )}
       {status === "error" && (
-        <p className="rounded-sm bg-red-50 p-4 text-red-800" role="alert">
+        <p className="rounded-2xl bg-red-50 p-4 text-red-800" role="alert">
           {statusMessage}
         </p>
       )}

@@ -18,14 +18,13 @@ export function OperationsProcess() {
           className="mx-auto"
         />
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {dict.home.operations.stages.map((stage, index) => (
             <div
               key={index}
-              className="relative border-l-2 border-kamao-copper/40 bg-kamao-graphite/40 p-6 pl-8"
+              className="rounded-2xl border-t-4 border-kamao-copper bg-kamao-graphite/30 p-6 backdrop-blur-sm"
             >
-              <span className="absolute -left-[2px] top-6 h-2 w-2 -translate-x-1/2 rounded-full bg-kamao-copper" />
-              <span className="mb-2 block font-heading text-4xl font-bold text-kamao-copper/30">
+              <span className="mb-3 block font-heading text-4xl font-bold text-kamao-copper/30">
                 {stage.number}
               </span>
               <h3 className="mb-3 font-heading text-xl font-bold text-white">

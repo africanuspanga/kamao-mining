@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const variants = {
   primary:
-    "bg-kamao-copper text-white hover:bg-kamao-copper/90 focus-visible:ring-kamao-copper",
+    "bg-kamao-copper text-white shadow-md shadow-kamao-copper/20 hover:bg-kamao-copper/90 hover:shadow-lg hover:shadow-kamao-copper/25 focus-visible:ring-kamao-copper",
   secondary:
-    "bg-kamao-cobalt text-white hover:bg-kamao-cobalt/90 focus-visible:ring-kamao-cobalt",
+    "bg-kamao-cobalt text-white shadow-md shadow-kamao-cobalt/20 hover:bg-kamao-cobalt/90 hover:shadow-lg hover:shadow-kamao-cobalt/25 focus-visible:ring-kamao-cobalt",
   outline:
-    "border-2 border-kamao-copper text-kamao-copper hover:bg-kamao-copper hover:text-white focus-visible:ring-kamao-copper",
+    "border border-kamao-copper text-kamao-copper hover:bg-kamao-copper hover:text-white focus-visible:ring-kamao-copper",
   outlineWhite:
-    "border-2 border-white text-white hover:bg-white hover:text-kamao-earth focus-visible:ring-white",
+    "border border-white text-white hover:bg-white hover:text-kamao-earth focus-visible:ring-white",
   ghost: "text-kamao-copper hover:text-kamao-copper/80 focus-visible:ring-kamao-copper",
 };
 
@@ -34,7 +34,7 @@ export function Button({
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center rounded-full font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
     sizes[size],
     className,

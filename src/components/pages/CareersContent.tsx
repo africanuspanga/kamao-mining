@@ -27,7 +27,7 @@ export function CareersContent() {
             {dict.careers.categories.items.map((category, index) => (
               <div
                 key={index}
-                className="rounded-sm border-l-4 border-kamao-copper bg-white p-6 shadow-sm"
+                className="rounded-2xl border-t-4 border-kamao-copper bg-white p-6 shadow-md"
               >
                 <h3 className="font-heading text-lg font-bold text-kamao-earth">
                   {category}
@@ -50,7 +50,7 @@ export function CareersContent() {
             <p className="mt-6 text-lg leading-relaxed text-kamao-mist/80">
               {dict.careers.application.instruction}
             </p>
-            <div className="mt-4 inline-flex items-center rounded-sm bg-kamao-graphite/40 px-4 py-3 text-sm text-kamao-mist/90">
+            <div className="mt-4 inline-flex items-center rounded-2xl bg-kamao-graphite/40 px-4 py-3 text-sm text-kamao-mist/90">
               {dict.careers.application.warning}
             </div>
             <div className="mt-8">

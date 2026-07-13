@@ -23,7 +23,7 @@ export function MobileMenu() {
       <button
         type="button"
         onClick={toggle}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-sm text-white hover:bg-kamao-graphite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper md:hidden"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-2xl text-white hover:bg-kamao-graphite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper md:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
       >
@@ -42,7 +42,7 @@ export function MobileMenu() {
           <button
             type="button"
             onClick={toggle}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-sm text-white hover:bg-kamao-graphite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl text-white hover:bg-kamao-graphite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper"
             aria-label="Close menu"
           >
             <X className="h-6 w-6" />
