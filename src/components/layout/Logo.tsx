@@ -7,42 +7,38 @@ import { cn } from "@/lib/utils";
 export function Logo({
   className,
   variant = "dark",
+  width = 180,
 }: {
   className?: string;
   variant?: "dark" | "light";
+  width?: number;
 }) {
-  return (
-    <div className={cn("flex items-center gap-3", className)}>
-      <div className="relative h-10 w-10 overflow-hidden rounded-2xl">
-        <Image
-          src={company.favicon}
-          alt=""
-          fill
-          className="object-contain"
-          sizes="40px"
-          priority
-        />
-      </div>
-      <div className="flex flex-col">
-        <span
-          className={cn(
-            "font-heading text-lg font-bold leading-none tracking-tight",
-            variant === "dark" ? "text-kamao-earth" : "text-white",
-          )}
-        >
-          KAMAO
-        </span>
-        <span
-          className={cn(
-            "text-[10px] font-medium uppercase tracking-[0.14em]",
-            variant === "dark" ? "text-kamao-copper" : "text-kamao-sand",
-          )}
-        >
-          Mining Company Limited
-        </span>
-      </div>
-    </div>
+  const aspect = company.logo.height / company.logo.width;
+  const height = Math.round(width * aspect);
+
+  const logo = (
+    <Image
+      src={company.logo.src}
+      alt={company.logo.alt}
+      width={width}
+      height={height}
+      className={cn("h-auto w-full object-contain", className)}
+      priority
+    />
   );
+
+  if (variant === "light") {
+    return (
+      <div
+        className="inline-flex items-center justify-center rounded-xl bg-white p-2 shadow-sm"
+        style={{ maxWidth: width + 16 }}
+      >
+        {logo}
+      </div>
+    );
+  }
+
+  return <div style={{ maxWidth: width }}>{logo}</div>;
 }
 
 export function LogoFull({

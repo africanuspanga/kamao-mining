@@ -30,7 +30,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 border-b border-kamao-graphite py-16 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Logo variant="light" />
+            <Logo variant="light" width={200} />
             <p className="mt-6 max-w-xs text-kamao-mist/80">
               {dict.company.tagline}
             </p>
@@ -112,9 +112,6 @@ export function Footer() {
         </div>
 
         <div className="py-8">
-          <p className="mb-4 text-sm leading-relaxed text-kamao-mist/60">
-            {dict.footer.disclaimer}
-          </p>
           <p className="text-sm text-kamao-mist/50">
             © {year} {dict.company.name}. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
           </p>

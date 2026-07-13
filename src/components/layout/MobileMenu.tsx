@@ -38,7 +38,7 @@ export function MobileMenu() {
         aria-hidden={!open}
       >
         <div className="flex h-20 items-center justify-between px-5">
-          <Logo variant="light" />
+          <Logo variant="light" width={140} />
           <button
             type="button"
             onClick={toggle}

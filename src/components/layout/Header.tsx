@@ -41,7 +41,7 @@ export function Header() {
             className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2"
             aria-label={dict.company.brandName}
           >
-            <Logo variant="light" />
+            <Logo variant="light" width={150} />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
