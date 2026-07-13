@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kamao-earth: #0b1822;
+  --kamao-cobalt: #215ea6;
+  --kamao-copper: #c6743c;
+  --kamao-sand: #e8ded0;
+  --kamao-mist: #f4f6f5;
+  --kamao-graphite: #27313a;
+  --kamao-white: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-kamao-mist text-kamao-graphite antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    @apply font-bold tracking-tight text-kamao-earth;
+  }
+
+  ::selection {
+    @apply bg-kamao-copper/20 text-kamao-earth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-kamao-copper focus-visible:ring-offset-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
