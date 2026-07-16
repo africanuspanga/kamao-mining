@@ -35,12 +35,12 @@ export function SectionHeader({
       )}
       <h2
         className={cn(
-          "font-heading text-section font-bold",
+          "font-heading text-2xl font-bold md:text-section",
           dark ? "text-white" : "text-kamao-earth",
         )}
       >
         {heading}
-        </h2>
+      </h2>
       {description && (
         <p
           className={cn(

@@ -2,9 +2,10 @@
 
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 
 export function TermsContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
   const sections = [
     dict.terms.sections.use,
@@ -20,6 +21,12 @@ export function TermsContent() {
       <PageHero
         heading={dict.terms.hero.heading}
         intro={dict.terms.hero.intro}
+        breadcrumbs={[
+          {
+            label: dict.footer.terms,
+            href: lang === "fr" ? "/fr/conditions/" : "/terms/",
+          },
+        ]}
       />
       <section className="bg-kamao-mist py-16 md:py-24">
         <Container>

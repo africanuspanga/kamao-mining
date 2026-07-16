@@ -10,12 +10,15 @@ import { Industries } from "@/components/home/Industries";
 import { InsightsPreview } from "@/components/home/InsightsPreview";
 import { ClosingCTA } from "@/components/home/ClosingCTA";
 import { LanguageProvider } from "@/lib/i18n";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "KAMAO Mining Company Limited | Des ressources pour un monde connecté",
   description:
     "Kamao Mining Company Limited est une entreprise minière basée en RDC, spécialisée dans le développement et l'approvisionnement en minéraux soutenant l'énergie moderne, les infrastructures, la technologie et l'industrie mondiale.",
-};
+  path: "/fr/",
+  lang: "fr",
+});
 
 export default function FrenchHomePage() {
   return (

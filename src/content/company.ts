@@ -3,6 +3,7 @@ export const company = {
   brandName: "KAMAO Mining",
   domain: "kamaomining.com",
   email: "info@kamaomining.com",
+  whatsappPhone: "+971 58 236 7012",
   drcPhone: "+243 901 458 771",
   regionalPhone: "+255 693 698 221",
   country: "Democratic Republic of the Congo",

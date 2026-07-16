@@ -20,7 +20,7 @@ export function ClosingCTA() {
       </div>
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-section font-bold text-white md:text-page">
+          <h2 className="font-heading text-2xl font-bold text-white md:text-section">
             {dict.home.closingCta.heading}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-kamao-mist/80 md:text-xl">

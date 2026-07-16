@@ -4,16 +4,26 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 import { company } from "@/content/company";
 import { formatEmailHref } from "@/lib/formatting";
 
 export function CareersContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
 
   return (
     <>
-      <PageHero heading={dict.careers.hero.heading} intro={dict.careers.hero.copy} />
+      <PageHero
+        heading={dict.careers.hero.heading}
+        intro={dict.careers.hero.copy}
+        breadcrumbs={[
+          {
+            label: dict.nav.careers,
+            href: lang === "fr" ? "/fr/carrieres/" : "/careers/",
+          },
+        ]}
+      />
 
       <section className="bg-kamao-mist py-20 md:py-28">
         <Container>

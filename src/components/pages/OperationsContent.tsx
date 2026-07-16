@@ -4,14 +4,24 @@ import Image from "next/image";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 
 export function OperationsContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
 
   return (
     <>
-      <PageHero heading={dict.operations.hero.heading} intro={dict.operations.hero.intro} />
+      <PageHero
+        heading={dict.operations.hero.heading}
+        intro={dict.operations.hero.intro}
+        breadcrumbs={[
+          {
+            label: dict.nav.operations,
+            href: lang === "fr" ? "/fr/operations/" : "/operations/",
+          },
+        ]}
+      />
 
       <section className="bg-kamao-mist py-20 md:py-28">
         <Container>
@@ -61,7 +71,7 @@ export function OperationsContent() {
               />
             </div>
             <div>
-              <h2 className="font-heading text-section font-bold text-white">
+              <h2 className="font-heading text-2xl font-bold text-white md:text-section">
                 {dict.operations.closing.heading}
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-kamao-mist/80">

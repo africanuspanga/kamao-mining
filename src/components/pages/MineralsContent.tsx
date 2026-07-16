@@ -19,6 +19,12 @@ export function MineralsContent() {
         heading={dict.minerals.hero.heading}
         intro={dict.minerals.hero.intro}
         centered
+        breadcrumbs={[
+          {
+            label: dict.nav.minerals,
+            href: lang === "fr" ? "/fr/mineraux/" : "/minerals/",
+          },
+        ]}
       />
 
       <section className="bg-kamao-mist py-20 md:py-28">

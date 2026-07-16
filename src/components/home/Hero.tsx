@@ -55,7 +55,7 @@ export function Hero() {
   const showVideo = !prefersReducedMotion && !isMobile;
 
   return (
-    <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-kamao-earth">
+    <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-kamao-earth sm:min-h-[92vh]">
       {/* Static fallback image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

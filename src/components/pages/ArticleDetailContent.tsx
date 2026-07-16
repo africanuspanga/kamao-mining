@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useDictionary, useLanguage } from "@/lib/i18n";
@@ -35,7 +36,7 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="relative overflow-hidden bg-kamao-earth pb-16 pt-36 md:pb-24 md:pt-44">
+      <section className="relative overflow-hidden bg-kamao-earth pb-16 pt-32 md:pb-24 md:pt-44">
         <div className="absolute inset-0 opacity-20">
           <Image
             src={article.heroImage}
@@ -48,18 +49,21 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
           <div className="absolute inset-0 bg-gradient-to-t from-kamao-earth via-kamao-earth/80 to-kamao-earth/60" />
         </div>
         <Container className="relative z-10">
-          <Link
-            href={lang === "fr" ? "/fr/actualites/" : "/insights/"}
-            className="inline-flex items-center text-sm font-medium text-kamao-mist/80 hover:text-kamao-copper"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {dict.nav.insights}
-          </Link>
+          <Breadcrumbs
+            items={[
+              {
+                label: dict.nav.insights,
+                href: lang === "fr" ? "/fr/actualites/" : "/insights/",
+              },
+              { label: article.title[lang] },
+            ]}
+            className="text-kamao-mist/70"
+          />
           <div className="mt-6 max-w-3xl">
             <span className="text-sm font-semibold uppercase tracking-widest text-kamao-copper">
               {article.category[lang]}
             </span>
-            <h1 className="mt-3 font-heading text-page font-bold text-white md:text-hero">
+            <h1 className="mt-3 font-heading text-3xl font-bold text-white md:text-page">
               {article.title[lang]}
             </h1>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-kamao-mist/80">
@@ -133,7 +137,7 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
       {relatedArticles.length > 0 && (
         <section className="bg-kamao-sand py-16 md:py-24">
           <Container>
-            <h2 className="font-heading text-section font-bold text-kamao-earth">
+            <h2 className="font-heading text-2xl font-bold text-kamao-earth md:text-section">
               {dict.insights.meta.related}
             </h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -168,7 +172,7 @@ export function ArticleDetailContent({ article }: { article: BlogArticle }) {
       <section className="bg-kamao-earth py-16 md:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-heading text-section font-bold text-white">
+            <h2 className="font-heading text-2xl font-bold text-white md:text-section">
               {dict.home.closingCta.heading}
             </h2>
             <Button

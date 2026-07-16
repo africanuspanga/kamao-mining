@@ -2,9 +2,10 @@
 
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 
 export function PrivacyContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
   const sections = [
     dict.privacy.sections.information,
@@ -20,6 +21,12 @@ export function PrivacyContent() {
       <PageHero
         heading={dict.privacy.hero.heading}
         intro={dict.privacy.hero.intro}
+        breadcrumbs={[
+          {
+            label: dict.footer.privacy,
+            href: lang === "fr" ? "/fr/confidentialite/" : "/privacy/",
+          },
+        ]}
       />
       <section className="bg-kamao-mist py-16 md:py-24">
         <Container>

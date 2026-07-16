@@ -16,11 +16,11 @@ export function CredibilityStrip() {
   return (
     <section className="border-b border-kamao-earth/10 bg-kamao-mist py-10">
       <Container>
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6 md:gap-10">
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 text-center"
+              className="flex items-center gap-3 text-left sm:text-center"
             >
               <span className="h-2 w-2 rounded-full bg-kamao-copper" />
               <span className="font-heading text-base font-bold text-kamao-earth md:text-lg">

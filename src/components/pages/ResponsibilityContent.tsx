@@ -4,11 +4,12 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 import { company } from "@/content/company";
 import { formatEmailHref } from "@/lib/formatting";
 
 export function ResponsibilityContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
 
   const sections = [
@@ -51,6 +52,12 @@ export function ResponsibilityContent() {
       <PageHero
         heading={dict.responsibility.hero.heading}
         intro={dict.responsibility.hero.intro}
+        breadcrumbs={[
+          {
+            label: dict.nav.responsibility,
+            href: lang === "fr" ? "/fr/responsabilite/" : "/responsibility/",
+          },
+        ]}
       />
 
       {sections.map((section, index) => (
@@ -103,7 +110,7 @@ export function ResponsibilityContent() {
       <section className="bg-kamao-sand py-20 md:py-28">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-heading text-section font-bold text-kamao-earth">
+            <h2 className="font-heading text-2xl font-bold text-kamao-earth md:text-section">
               {dict.responsibility.cta.heading}
             </h2>
             <p className="mt-4 text-lg text-kamao-graphite/80">

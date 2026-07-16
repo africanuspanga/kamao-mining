@@ -9,6 +9,12 @@ export function ProjectsContent() {
   const lang = useLanguage();
   const dict = useDictionary();
   const projects = getPublishedProjects();
+  const breadcrumbItems = [
+    {
+      label: dict.nav.projects,
+      href: lang === "fr" ? "/fr/projets/" : "/projects/",
+    },
+  ];
 
   if (projects.length === 0) {
     return (
@@ -16,6 +22,7 @@ export function ProjectsContent() {
         <PageHero
           heading={dict.projects.hero.heading}
           intro={dict.projects.hero.intro}
+          breadcrumbs={breadcrumbItems}
         />
         <section className="bg-kamao-mist py-24 md:py-32">
           <Container>
@@ -38,6 +45,7 @@ export function ProjectsContent() {
       <PageHero
         heading={dict.projects.hero.heading}
         intro={dict.projects.hero.intro}
+        breadcrumbs={breadcrumbItems}
       />
       <section className="bg-kamao-mist py-20 md:py-28">
         <Container>

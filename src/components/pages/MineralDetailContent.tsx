@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useDictionary, useLanguage } from "@/lib/i18n";
@@ -16,16 +17,19 @@ export function MineralDetailContent({ mineral }: { mineral: Mineral }) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-kamao-earth pb-16 pt-36 md:pb-24 md:pt-44">
+      <section className="relative overflow-hidden bg-kamao-earth pb-16 pt-32 md:pb-24 md:pt-44">
         <Container>
-          <Link
-            href={lang === "fr" ? "/fr/mineraux/" : "/minerals/"}
-            className="inline-flex items-center text-sm font-medium text-kamao-mist/80 hover:text-kamao-copper"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {dict.nav.minerals}
-          </Link>
-          <h1 className="mt-6 max-w-3xl font-heading text-page font-bold text-white md:text-hero">
+          <Breadcrumbs
+            items={[
+              {
+                label: dict.nav.minerals,
+                href: lang === "fr" ? "/fr/mineraux/" : "/minerals/",
+              },
+              { label: mineral.name[lang] },
+            ]}
+            className="text-kamao-mist/70"
+          />
+          <h1 className="mt-6 max-w-3xl font-heading text-3xl font-bold text-white md:text-page">
             {mineral.pageHeading[lang]}
           </h1>
         </Container>
@@ -87,7 +91,7 @@ export function MineralDetailContent({ mineral }: { mineral: Mineral }) {
       {relatedMinerals.length > 0 && (
         <section className="bg-kamao-sand py-16 md:py-24">
           <Container>
-            <h2 className="font-heading text-section font-bold text-kamao-earth">
+            <h2 className="font-heading text-2xl font-bold text-kamao-earth md:text-section">
               {dict.minerals.detail.relatedMinerals}
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

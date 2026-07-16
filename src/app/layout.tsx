@@ -1,10 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { organizationStructuredData, websiteStructuredData } from "@/lib/structured-data";
+import {
+  localBusinessStructuredData,
+  organizationStructuredData,
+  websiteStructuredData,
+} from "@/lib/structured-data";
 import { defaultMetadata } from "@/lib/metadata";
 
 const inter = Inter({
@@ -21,6 +25,13 @@ const manrope = Manrope({
 
 export const metadata: Metadata = defaultMetadata;
 
+export const viewport: Viewport = {
+  themeColor: "#0b1822",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,11 +40,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <head>
-        <link rel="icon" href="/Kamo-Favicon.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationStructuredData, websiteStructuredData]),
+            __html: JSON.stringify([
+              organizationStructuredData,
+              localBusinessStructuredData,
+              websiteStructuredData,
+            ]),
           }}
         />
       </head>

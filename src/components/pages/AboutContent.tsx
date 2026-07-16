@@ -4,14 +4,24 @@ import Image from "next/image";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 
 export function AboutContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
 
   return (
     <>
-      <PageHero heading={dict.about.hero.heading} intro={dict.about.hero.intro} />
+      <PageHero
+        heading={dict.about.hero.heading}
+        intro={dict.about.hero.intro}
+        breadcrumbs={[
+          {
+            label: dict.nav.about,
+            href: lang === "fr" ? "/fr/a-propos/" : "/about/",
+          },
+        ]}
+      />
 
       <section className="bg-kamao-mist py-20 md:py-28">
         <Container>

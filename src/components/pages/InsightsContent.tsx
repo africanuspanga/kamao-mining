@@ -20,6 +20,12 @@ export function InsightsContent() {
         heading={dict.insights.hero.heading}
         intro={dict.insights.hero.description}
         centered
+        breadcrumbs={[
+          {
+            label: dict.nav.insights,
+            href: lang === "fr" ? "/fr/actualites/" : "/insights/",
+          },
+        ]}
       />
 
       <section className="bg-kamao-mist py-20 md:py-28">

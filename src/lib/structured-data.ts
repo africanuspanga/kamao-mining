@@ -4,21 +4,51 @@ import { siteUrl } from "@/lib/metadata";
 export const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: company.legalName,
+  url: siteUrl,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${company.logo.src}`,
+    width: company.logo.width,
+    height: company.logo.height,
+  },
+  email: company.email,
+  telephone: [company.drcPhone, company.regionalPhone, company.whatsappPhone].filter(
+    (phone): phone is string => typeof phone === "string" && phone.length > 0,
+  ),
+  // Address, coordinates, registration numbers and social profiles
+  // intentionally omitted until verified by the client.
+  sameAs: Object.values(company.social).filter((url): url is string => typeof url === "string"),
+};
+
+export const localBusinessStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "MiningCompany",
+  "@id": `${siteUrl}/#business`,
   name: company.legalName,
   url: siteUrl,
   logo: `${siteUrl}${company.logo.src}`,
   email: company.email,
-  telephone: [company.drcPhone, company.regionalPhone],
-  // Address, coordinates, registration numbers and social profiles
-  // intentionally omitted until verified by the client.
+  telephone: [company.drcPhone, company.regionalPhone, company.whatsappPhone].filter(
+    (phone): phone is string => typeof phone === "string" && phone.length > 0,
+  ),
+  areaServed: {
+    "@type": "Country",
+    name: company.country,
+  },
   sameAs: Object.values(company.social).filter((url): url is string => typeof url === "string"),
 };
 
 export const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
   name: company.legalName,
   url: siteUrl,
+  publisher: {
+    "@id": `${siteUrl}/#organization`,
+  },
   potentialAction: {
     "@type": "SearchAction",
     target: `${siteUrl}/insights/?q={search_term_string}`,
@@ -36,6 +66,31 @@ export function createBreadcrumbStructuredData(items: { name: string; path: stri
       name: item.name,
       item: `${siteUrl}${item.path}`,
     })),
+  };
+}
+
+export function createWebPageStructuredData({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteUrl}${path}`,
+    url: `${siteUrl}${path}`,
+    name: title,
+    description,
+    isPartOf: {
+      "@id": `${siteUrl}/#website`,
+    },
+    about: {
+      "@id": `${siteUrl}/#organization`,
+    },
   };
 }
 

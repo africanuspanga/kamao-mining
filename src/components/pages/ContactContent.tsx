@@ -6,9 +6,10 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactDetails } from "@/components/contact/ContactDetails";
-import { useDictionary } from "@/lib/i18n";
+import { useDictionary, useLanguage } from "@/lib/i18n";
 
 export function ContactContent() {
+  const lang = useLanguage();
   const dict = useDictionary();
 
   return (
@@ -16,6 +17,12 @@ export function ContactContent() {
       <PageHero
         heading={dict.contact.hero.heading}
         intro={dict.contact.hero.copy}
+        breadcrumbs={[
+          {
+            label: dict.nav.contact,
+            href: lang === "fr" ? "/fr/contact/" : "/contact/",
+          },
+        ]}
       />
 
       <section className="bg-kamao-mist py-20 md:py-28">
