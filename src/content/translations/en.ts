@@ -62,8 +62,6 @@ export const en = {
     error: "Something went wrong. Please try again or email us directly.",
   },
   footer: {
-    disclaimer:
-      "Information presented on this website is for general corporate communication. Project, technical, production, licensing and sustainability information must be verified against official company documentation.",
     legal: "Legal",
     privacy: "Privacy Policy",
     terms: "Terms of Use",

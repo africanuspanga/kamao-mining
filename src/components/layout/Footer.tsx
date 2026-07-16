@@ -111,10 +111,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="space-y-4 border-t border-kamao-graphite py-8">
-          <p className="max-w-4xl text-xs leading-relaxed text-kamao-mist/50">
-            {dict.footer.disclaimer}
-          </p>
+        <div className="border-t border-kamao-graphite py-8">
           <p className="text-sm text-kamao-mist/50">
             © {year} {dict.company.name}. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
           </p>

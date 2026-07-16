@@ -62,8 +62,6 @@ export const fr = {
     error: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par e-mail.",
   },
   footer: {
-    disclaimer:
-      "Les informations présentées sur ce site web sont destinées à la communication d'entreprise générale. Les informations relatives aux projets, à la technique, à la production, aux licences et au développement durable doivent être vérifiées contre la documentation officielle de la société.",
     legal: "Mentions légales",
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
